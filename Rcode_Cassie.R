@@ -11,3 +11,9 @@ chr_1_cut <- chr_1[1:4, 12:4487]
   
 chr_9 <- read.delim("AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr9.hmp.txt")
 View(head(chr_9, n=5))
+chr_1_cut <- chr_1[, 12:4487]
+
+
+setwd("~/Documents/BCB546x/546x_Final Project/phenotypic_data")
+pheno <- read.delim("Romay_etal_2013_GenomeBiol_phenotypes-130503.txt")
+
