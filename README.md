@@ -7,12 +7,14 @@ This is the repository of the final project for the Iowa Captives. Inside are th
 ### raw data
 The raw data folder contains raw genotypic data associated with the paper that was downloaded from panzea.org (https://www.panzea.org/data) 
 
-### phenotypic data
+### phenotypic_data
 The phenotypic data folder contains phenotypic data associated with the paper that was downloaded from panzea.org (https://www.panzea.org/data).
 
-### Romay et al 2013
+### Romay_et_al_2013
 This folder contains the "Additional Material" and data for the paper that we were able to find
 
-
-### TASSEL folder
+### TASSEL
 The TASSEL folder contains data in .csv file formats that was created by analysis done in TASSEL version 5. The code for figure 5, minor allele frequency distribution, uses the data in this folder. 
+
+### R Scripts
+All r scripts are title with the analysis and figure from the paper they correspond to.
