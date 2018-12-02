@@ -17,4 +17,4 @@ This folder contains the "Additional Material" and data for the paper that we we
 The TASSEL folder contains data in .csv file formats that was created by analysis done in TASSEL version 5. The code for figure 5, minor allele frequency distribution, uses the data in this folder. 
 
 ### R Scripts
-All r scripts are title with the analysis and figure from the paper they correspond to.
+All r scripts are titled by the analysis and figure from the paper they correspond to.
