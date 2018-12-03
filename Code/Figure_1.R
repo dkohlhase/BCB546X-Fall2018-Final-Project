@@ -1,4 +1,4 @@
-# Setup Environment + Import Data -------------------------------------------------------------------------------------
+# Setup Environment ----------------------------------------------------------------------------------------------------------------------------------
 if (!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
 if (!require("ggplot2")) install.packages("ggplot2")
@@ -12,26 +12,15 @@ library(data.table)
 if (!require("psych")) install.packages("psych")
 library(psych)
 
-setwd("Kohlhase_Academic/Iowa_State/PhD_Courses/BCB_546X/Final_Project/BCB546X_Final_Project/")
-
-#chr_10 <- read.delim("Kohlhase_Academic/Iowa_State/PhD_Courses/BCB_546X/Final_Project/AmesUSInbreds_AllZeaGBSv1/AmesUSInbreds_AllZeaGBSv1.0_imputed_20130508_chr10.hmp.txt")
-#View(head(chr_10, n=3))
-#chr_10_cut <- chr_10[,c(1,3,4)]
-#colnames(chr_10_cut)[1] <- "SNP_ID"
-
-#loop_df <- chr_10[,c(1:4,12:4487)]
-#View(head(loop_df, n = 3))
-
-
-
-setwd("../AmesUSInbreds_AllZeaGBSv1-2/")
-whole <- fread("AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", drop = 5:4487)
+# Import Data ----------------------------------------------------------------------------------------------------------------------------------------
+setwd("../")
+whole <- fread("../AmesUSInbreds_AllZeaGBSv1-2/AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", drop = 5:4487)
 head(whole, n = 10)
 #table(whole$alleles)
 whole_sort <- whole[order(chrom),]
 
 
-# Figure 1 ----------------------------------------------------------------------------------------------------------------
+# Order SNPs Across Whole Genome ---------------------------------------------------------------------------------------------------------------------
 chr_1 <- whole_sort[chrom == 1]
 tail(chr_1$pos, n=1)
 
@@ -92,13 +81,15 @@ tail(chr_10$pos, n=1)
 whole_prime <- rbind(chr_1,chr_2,chr_3,chr_4,chr_5,chr_6,chr_7,chr_8,chr_9,chr_10)
 headTail(whole_prime)
 
+# Create Bins ----------------------------------------------------------------------------------------------------------------------------------------
 df <- whole_prime %>% 
   mutate(Dist_Bin = cut(as.numeric(pos), breaks = 1500))
 
+# Prepare File for Plotting --------------------------------------------------------------------------------------------------------------------------
 df$chrom <- as.character(df$chrom)
 str(df)
-#table(df$chrom)
 
+# Plot Figure ----------------------------------------------------------------------------------------------------------------------------------------
 ggplot(data = df) +
   geom_bar(mapping = aes(x = Dist_Bin, col = chrom), stat = "count") +
   ggtitle(label = "Distribution of SNPs across chromosomes") +
@@ -107,6 +98,8 @@ ggplot(data = df) +
   theme(
     plot.title = element_text(hjust = 0.5),
     axis.text.x = element_blank(),
-    axis.ticks.x = element_blank()
+    axis.ticks.x = element_blank(),
+    legend.position="none"
   )
++ theme()
 #ggsave(filename = "Distribution of SNPs across chromosomes.png", device = "png")
