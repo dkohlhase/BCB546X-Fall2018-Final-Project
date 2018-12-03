@@ -1,0 +1,2 @@
+# Raw Genotypic Data
+Raw genotypic data for Romay *et al.* (2013) is stored in a CyVerse Data Commons (http://datacommons.cyverse.org/browse/iplant/home/shared/panzea/genotypes/GBS/v10). In order to access the data, you will need to create a  CyVerse account if you do not already have one. In all of our analyses we used the imputed genotypic data. This data could not be uploaded to our repository, as the files are too large for github.
