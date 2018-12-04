@@ -28,6 +28,7 @@ First step  was to create a new position collumn that was continuous across the 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
 ### Figure 2 - Identical by State Distribution Across GBS Samples
+In Figure 2 of the paper, 
 ![](./Figures/Romay_et_al/Fig2.png)
 
 
