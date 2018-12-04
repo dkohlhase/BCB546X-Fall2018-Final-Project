@@ -67,7 +67,8 @@ length(unique(IBSdata$Pairs))
 library(ggplot2)
 ggplot(IBSdata, aes(x=IBS)) + geom_histogram(bins = 31, color="black", fill="grey") + 
   ggtitle("Distribution of IBS Relationships for Closely Related Lines") +
-  theme_bw() + #remove the grey background from the graph
+  scale_y_continuous(breaks=c(0,500,1000,1500,2000,2500,3000)) +
+  theme_bw() + #remove the grey background from the graph 
   theme(plot.title = element_text(hjust = 0.5), #center the title of graph
         panel.grid.major.x = element_blank() , #remove major verticle grid lines
         panel.grid.minor.x = element_blank() , #remove minor verticle grid lines
@@ -80,6 +81,7 @@ IBSdata_Filter <- IBSdata[ which(IBSdata$IBS >=0.95), ] #look more closely at va
 library(ggplot2)
 ggplot(IBSdata_Filter, aes(x=IBS)) + geom_histogram(bins=6, color="black", fill="grey") + 
   ggtitle("Distribution of IBS Relationships for Closely Related Lines") +
+  scale_y_continuous(breaks=c(0,200,400,600,800,1000,1200,1400,1600,1800)) +
   theme_bw() + #remove grey background from IBS relationships
   theme(plot.title = element_text(hjust = 0.5),
         panel.grid.major.x = element_blank() , #remove major verticle grid lines
