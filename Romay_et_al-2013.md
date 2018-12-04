@@ -37,7 +37,9 @@ The data for this figure are located at Panzea. The first issue we ran into was 
 ### Figure 3 - B73 Network Diagram
 ![](./Figures/Romay_et_al/Fig3.png)
 
+![](./Figures/Iowa_Captives/Fig3_with_R.png)
 
+![](./Figures/Iowa_Captives/Fig3_with_gephi.png)
 ### Figure 5 - Minor Allele Frequency Distribution and Percentage of SNPS Shared Between Maize Populations
 In Figure 5 of the paper, they show both minor allele frequency distribution across all pairs of lines and the percentage of SNPs shared between maize subpopulations. In the paper they describe that: "MAF were calculated using the ‘Geno Summary by Site’ analysis tool in TASSEL (version 4.0). Taxa and site filter tools from that program were also used. To remove possible sequencing errors, only alleles detected in at least two individuals in a particular group were considered to be present for the allelic diversity calculations."
 
