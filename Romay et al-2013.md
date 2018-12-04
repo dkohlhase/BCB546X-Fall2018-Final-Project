@@ -26,6 +26,8 @@ This paper had five objectives:
 ![](./Figures/Romay_et_al/Fig2.png)
 
 
+![](./Figures/Iowa_Captives/Figure2.png)
+![](./Figures/Iowa_Captives/Figure2_A.png)
 
 ### Figure 3 - B73 Network Diagram
 ![](./Figures/Romay_et_al/Fig3.png)
