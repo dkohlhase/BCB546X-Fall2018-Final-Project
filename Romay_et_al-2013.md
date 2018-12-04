@@ -23,7 +23,7 @@ The first figure of the paper invovles characterizing the marker coverage by plo
 
 ![](./Figures/Romay_et_al/Fig1.png)
 
-First step  was to create a new position collumn that was continuous across the entrire genome rather than positions that restarted for every chromosome
+The data for this figure are located at Panzea. The first issue we ran into was loading the data file into R Studio. When we tried to load the entire file the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R was  In order to create a graph that fell on a single x-axis a new position column that was continuous across the entrire genome rather than positions that restarted for every chromosome
 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
@@ -38,7 +38,9 @@ In Figure 2 of the paper,
 ### Figure 3 - B73 Network Diagram
 ![](./Figures/Romay_et_al/Fig3.png)
 
+![](./Figures/Iowa_Captives/Fig3_with_R.png)
 
+![](./Figures/Iowa_Captives/Fig3_with_gephi.png)
 ### Figure 5 - Minor Allele Frequency Distribution and Percentage of SNPS Shared Between Maize Populations
 In Figure 5 of the paper, they show both minor allele frequency distribution across all pairs of lines and the percentage of SNPs shared between maize subpopulations. In the paper they describe that: "MAF were calculated using the ‘Geno Summary by Site’ analysis tool in TASSEL (version 4.0). Taxa and site filter tools from that program were also used. To remove possible sequencing errors, only alleles detected in at least two individuals in a particular group were considered to be present for the allelic diversity calculations."
 
