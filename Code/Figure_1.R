@@ -13,8 +13,9 @@ if (!require("psych")) install.packages("psych")
 library(psych)
 
 # Import Data ----------------------------------------------------------------------------------------------------------------------------------------
-setwd("../")
-whole <- fread("../AmesUSInbreds_AllZeaGBSv1-2/AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", drop = 5:4487)
+setwd("../")  # moves from the 'Code' directory up to the whole repository directory and sets as the working directory
+# USER WILL NEED TO CUSTOMIZE THE FOLLOWING FOLDER PATH TO WHEREVER THE USER DOWNLOADED AND STORED THE GENOTYPE FILES
+whole <- fread("../AmesUSInbreds_AllZeaGBSv1-2/AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", drop = 5:4487) 
 head(whole, n = 10)
 #table(whole$alleles)
 whole_sort <- whole[order(chrom),]
@@ -83,7 +84,7 @@ headTail(whole_prime)
 
 # Create Bins ----------------------------------------------------------------------------------------------------------------------------------------
 df <- whole_prime %>% 
-  mutate(Dist_Bin = cut(as.numeric(pos), breaks = 1500))
+  mutate(Dist_Bin = cut(as.numeric(pos), breaks = 2100))
 
 # Prepare File for Plotting --------------------------------------------------------------------------------------------------------------------------
 df$chrom <- as.character(df$chrom)
@@ -92,7 +93,7 @@ str(df)
 # Plot Figure ----------------------------------------------------------------------------------------------------------------------------------------
 ggplot(data = df) +
   geom_bar(mapping = aes(x = Dist_Bin, col = chrom), stat = "count") +
-  ggtitle(label = "Distribution of SNPs across chromosomes") +
+  ggtitle(label = "Distribution of SNPs across genome") +
   xlab(label = "Position (Mb)") +
   ylab(label = "Number of SNPs") +
   theme(
@@ -101,5 +102,4 @@ ggplot(data = df) +
     axis.ticks.x = element_blank(),
     legend.position="none"
   )
-+ theme()
-#ggsave(filename = "Distribution of SNPs across chromosomes.png", device = "png")
+ggsave(filename = "Figures/Iowa_Captives/Fig1.png", device = "png", width = 6, height = 3)
