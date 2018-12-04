@@ -19,11 +19,17 @@ This paper had five objectives:
 
 ## Replication of Analyses & Results
 ### Figure 1 - Distribution of SNPs Across the Genome
-The first figure of the paper invovles characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB. 
+The first figure of the paper invovles characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB windows of the genome. 
 
 ![](./Figures/Romay_et_al/Fig1.png)
 
-The data for this figure are located at Panzea. The first issue we ran into was loading the data file into R Studio. When we tried to load the entire file the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R was  In order to create a graph that fell on a single x-axis a new position column that was continuous across the entrire genome rather than positions that restarted for every chromosome
+The data for this figure are located and available at Panzea. The file sizes were too big to upload to Github. 
+
+When trying to recreate this figure the first challenge we ran into was loading the data file into R Studio. When we tried loading a single file containing all information from all ten chromosomes, the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R became problematic because of its size. We shortened the loading time by extracting only the columns needed to make the graph, which were the chromosome and position. 
+
+The second challenge was the SNP positions. When we tried creating the graph with the data that were given, the SNP number would be confounding because the SNP positions on different chromosomes would fall into the same 1 MB window. In order to make the bins specific for each chromosome we modified the position column so that SNP position was continuous across the entire genome.
+
+The third challenge was the centromere positions. In the article the authors identify the centromeres on the graph by making those bins a different color. Nowhere in the article or in the data are references to the speficic positions of the centromeres. If we would have had access to these locations then the colors could have been changed in our script.
 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
