@@ -6,8 +6,8 @@ getwd()
 setwd("../Data/additional_materials")
  
 # Read in the data:
-nodes <- read.csv("nodes.csv", header=T, as.is=T)
-links <- read.csv("edges.csv", header=T, as.is=T)
+nodes <- read.csv("nodes_file.csv", header=T, as.is=T)
+links <- read.csv("d_edges_file.csv", header=T, as.is=T)
 
 # Examine the data:
 head(nodes)
