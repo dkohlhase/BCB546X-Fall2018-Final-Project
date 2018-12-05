@@ -76,7 +76,7 @@ plot(net, edge.arrow.size=.4, edge.curved=.2)
 # Set edge color to light gray, the node & border color to orange 
 # Replace the vertex label with the node names stored in "media"
 plot(net, edge.arrow.size=.2, edge.curved=.2, edge.color="grey",
-     vertex.color="white", vertex.frame.color="#ffffff", vertex.label=V(net)$media,
+     vertex.color="white", vertex.frame.color="#ffffff", vertex.label=V(net)$Lines,
      vertex.label.color="black", vertex.label.family="Arial",
      vertex.label.cex=.5, vertex.label.font=2) 
 
