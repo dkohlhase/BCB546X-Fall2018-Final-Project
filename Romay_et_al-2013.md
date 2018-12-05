@@ -5,7 +5,7 @@ Analysis and Replication by Iowa Captives: Daniel Kohlhase, Alejandro Ledesma, A
 
 
 
-## Background of paper
+## Background of Paper
 
 This paper was published not long after the development of the then new sequencing procedure, Genotyping by Sequencing (GBS). GBS enables characterization of germplasm collections on a genome-wide scale and can be applied to species with high-diversity and large genomes, such as maize. Plant introduction stations around the world, such as the USDA-ARS North Central Regional Plant Introduction Station (NCRPIS) in Ames, Iowa, preserve distinct inbred lines and curate and manage these germplasm collections. Many studies have been conducted to genotypically characterize such collections, however small sample sizes may not allow the identification of all important or significant QTLs for complex traits. In this study done by Romay *et al.*, GBS was used to analyze 4,351 maize samples from 2,815 maize accessions with 681,257 SNP markers across the genome.
 
@@ -19,11 +19,18 @@ This paper had five objectives:
 
 ## Replication of Analyses & Results
 ### Figure 1 - Distribution of SNPs Across the Genome
-The first figure of the paper involves characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB. 
+
+The first figure of the paper involves characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB windows of the genome.
 
 ![](./Figures/Romay_et_al/Fig1.png)
 
-The data for this figure (raw genotypic data) are located at Panzea.org. The first issue we ran into was loading the data file into R Studio. When we tried to load the entire file the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R was  In order to create a graph that fell on a single x-axis a new position column that was continuous across the entr=ire genome rather than positions that restarted for every chromosome
+The data for this figure are located and available at Panzea. The file sizes were too big to upload to Github.
+
+When trying to recreate this figure the first challenge we ran into was loading the data file into R Studio. When we tried loading a single file containing all information from all ten chromosomes, the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R became problematic because of its size. We shortened the loading time by extracting only the columns needed to make the graph, which were the chromosome and position.
+
+The second challenge was the SNP positions. When we tried creating the graph with the data that were given, the SNP number would be confounding because the SNP positions on different chromosomes would fall into the same 1 MB window. In order to make the bins specific for each chromosome we modified the position column so that SNP position was continuous across the entire genome.
+
+The third challenge was the centromere positions. In the article the authors identify the centromeres on the graph by making those bins a different color. Nowhere in the article or in the data are references to the speficic positions of the centromeres. If we would have had access to these locations then the colors could have been changed in our script.
 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
@@ -41,6 +48,7 @@ One distinct difference between calculating IBS in TASSEL versus PLINK is that t
 ![](./Figures/Iowa_Captives/Figure2_A.png)
 
 In addition to using the IBS data generated from TASSEL, we also looked at the IBS data for each line and their 10 most closely related lines which was provided in the additional material in file "Additional_File_2". Using this data instead, we created additional histograms:
+
 ![](./Figures/Iowa_Captives/Fig2_filtered.png)
 ![](./Figures/Iowa_Captives/Fig2A_filtered.png)
 
