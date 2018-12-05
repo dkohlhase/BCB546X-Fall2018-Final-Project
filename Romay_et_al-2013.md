@@ -70,10 +70,10 @@ Once we created these two files, the data was read into Gephi where we created t
 ![](./Figures/Romay_et_al/Fig3.png)
 
 ![](./Figures/Iowa_Captives/Fig3_with_R.png)
-Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using Gephi-0.9.2).
+Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using R).
 
 ![](./Figures/Iowa_Captives/Fig3_with_gephi.png)
-Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using R).
+Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using Gephi-0.9.2).
 
 ### Figure 5 - Minor Allele Frequency Distribution and Percentage of SNPS Shared Between Maize Populations
 In Figure 5 of the paper, they show both minor allele frequency distribution across all pairs of lines and the percentage of SNPs shared between maize subpopulations. In the paper they describe that: "MAF were calculated using the ‘Geno Summary by Site’ analysis tool in TASSEL (version 4.0). Taxa and site filter tools from that program were also used. To remove possible sequencing errors, only alleles detected in at least two individuals in a particular group were considered to be present for the allelic diversity calculations."
