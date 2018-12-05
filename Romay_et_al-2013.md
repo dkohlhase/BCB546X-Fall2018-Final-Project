@@ -32,7 +32,7 @@ The second challenge was the SNP positions. When we tried creating the graph wit
 
 The third challenge was the centromere positions. In the article the authors identify the centromeres on the graph by making those bins a different color. Nowhere in the article or in the data are references to the speficic positions of the centromeres. If we would have had access to these locations then the colors could have been changed in our script.
 
-Additionally, the chromosome labels on the x-axis appear to be added post graph production.
+There were a couple of noticeable differences between the graph in the article and the final graph that we generated. The first was the number of SNPs in each bin (which also led to different y-axis labels). The authors vaguely describe the selection method used to decrease the number of SNP but do not specify which program they used. The second was the presence of labels of the chromosome number on the x-axis, which we believe were added post graph production.
 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
