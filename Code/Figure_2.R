@@ -1,6 +1,8 @@
 ##Figure 2 using IBS data matrix created in TASSEL by loading in genotypic data
 #and using relatedness "kinship" function with "Normalized_IBS" option and exporting as .csv
 
+#User will need to generate matrix in TASSEL, export as .csv, save file, and set working directory to where file is located
+
 #read in the .csv
 m1 <- read.csv("IBSdata_Normalized_Tassel.csv", header=TRUE)
 
