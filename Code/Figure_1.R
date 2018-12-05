@@ -13,9 +13,8 @@ if (!require("psych")) install.packages("psych")
 library(psych)
 
 # Import Data ----------------------------------------------------------------------------------------------------------------------------------------
-setwd("../")  # moves from the 'Code' directory up to the whole repository directory and sets as the working directory
 # USER WILL NEED TO CUSTOMIZE THE FOLLOWING FOLDER PATH TO WHEREVER THE USER DOWNLOADED AND STORED THE GENOTYPE FILES
-whole <- fread("../AmesUSInbreds_AllZeaGBSv1-2/AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", drop = 5:4487) 
+whole <- fread("../../AmesUSInbreds_AllZeaGBSv1-2/AmesUSInbreds_AllZeaGBSv1.0_BPEC_20130508.hmp.txt", select = 3:4) 
 head(whole, n = 10)
 #table(whole$alleles)
 whole_sort <- whole[order(chrom),]
@@ -27,55 +26,55 @@ tail(chr_1$pos, n=1)
 
 chr_2 <- whole_sort[chrom == 2]
 headTail(chr_2, top = 2, bottom = 2)
-chr_2$pos <- chr_2[,4] + tail(chr_1$pos, n=1)
+chr_2$pos <- chr_2[,2] + tail(chr_1$pos, n=1)
 headTail(chr_2, top = 2, bottom = 2)
 tail(chr_2$pos, n=1)
 
 chr_3 <- whole_sort[chrom == 3]
 headTail(chr_3, top = 2, bottom = 2)
-chr_3$pos <- chr_3[,4] + tail(chr_2$pos, n=1)
+chr_3$pos <- chr_3[,2] + tail(chr_2$pos, n=1)
 headTail(chr_3, top = 2, bottom = 2)
 tail(chr_3$pos, n=1)
 
 chr_4 <- whole_sort[chrom == 4]
 headTail(chr_4, top = 2, bottom = 2)
-chr_4$pos <- chr_4[,4] + tail(chr_3$pos, n=1)
+chr_4$pos <- chr_4[,2] + tail(chr_3$pos, n=1)
 headTail(chr_4, top = 2, bottom = 2)
 tail(chr_4$pos, n=1)
 
 chr_5 <- whole_sort[chrom == 5]
 headTail(chr_5, top = 2, bottom = 2)
-chr_5$pos <- chr_5[,4] + tail(chr_4$pos, n=1)
+chr_5$pos <- chr_5[,2] + tail(chr_4$pos, n=1)
 headTail(chr_5, top = 2, bottom = 2)
 tail(chr_5$pos, n=1)
 
 chr_6 <- whole_sort[chrom == 6]
 headTail(chr_6, top = 2, bottom = 2)
-chr_6$pos <- chr_6[,4] + tail(chr_5$pos, n=1)
+chr_6$pos <- chr_6[,2] + tail(chr_5$pos, n=1)
 headTail(chr_6, top = 2, bottom = 2)
 tail(chr_6$pos, n=1)
 
 chr_7 <- whole_sort[chrom == 7]
 headTail(chr_7, top = 2, bottom = 2)
-chr_7$pos <- chr_7[,4] + tail(chr_6$pos, n=1)
+chr_7$pos <- chr_7[,2] + tail(chr_6$pos, n=1)
 headTail(chr_7, top = 2, bottom = 2)
 tail(chr_7$pos, n=1)
 
 chr_8 <- whole_sort[chrom == 8]
 headTail(chr_8, top = 2, bottom = 2)
-chr_8$pos <- chr_8[,4] + tail(chr_7$pos, n=1)
+chr_8$pos <- chr_8[,2] + tail(chr_7$pos, n=1)
 headTail(chr_8, top = 2, bottom = 2)
 tail(chr_8$pos, n=1)
 
 chr_9 <- whole_sort[chrom == 9]
 headTail(chr_9, top = 2, bottom = 2)
-chr_9$pos <- chr_9[,4] + tail(chr_8$pos, n=1)
+chr_9$pos <- chr_9[,2] + tail(chr_8$pos, n=1)
 headTail(chr_9, top = 2, bottom = 2)
 tail(chr_9$pos, n=1)
 
 chr_10 <- whole_sort[chrom == 10]
 headTail(chr_10, top = 2, bottom = 2)
-chr_10$pos <- chr_10[,4] + tail(chr_9$pos, n=1)
+chr_10$pos <- chr_10[,2] + tail(chr_9$pos, n=1)
 headTail(chr_10, top = 2, bottom = 2)
 tail(chr_10$pos, n=1)
 
@@ -90,8 +89,10 @@ df <- whole_prime %>%
 df$chrom <- as.character(df$chrom)
 str(df)
 
-# Plot Figure ----------------------------------------------------------------------------------------------------------------------------------------
+# Plot Figure in color ----------------------------------------------------------------------------------------------------------------------------------------
 ggplot(data = df) +
+  geom_hline(yintercept = c(seq(0,1500,100)), color = "lightgrey", size = 0.5) +
+  geom_hline(yintercept = c(seq(0,1500,500)), color = "grey", size = 1) +
   geom_bar(mapping = aes(x = Dist_Bin, col = chrom), stat = "count") +
   ggtitle(label = "Distribution of SNPs across genome") +
   xlab(label = "Position (Mb)") +
@@ -102,4 +103,4 @@ ggplot(data = df) +
     axis.ticks.x = element_blank(),
     legend.position="none"
   )
-ggsave(filename = "Figures/Iowa_Captives/Fig1.png", device = "png", width = 6, height = 3)
+ggsave(filename = "../Figures/Iowa_Captives/Fig1.png", device = "png", width = 6, height = 3)
