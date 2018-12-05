@@ -54,7 +54,8 @@ ggplot(IBSdata_Filter, aes(x=IBS)) + geom_histogram(bins=6, color="black", fill=
 #Below is code used to create figure 2 using only IBS data provided in additional materials for the paper
 #IBS values of each line with it's 10 closest lines
 
-setwd("../Data/additional_materials")
+getwd()
+setwd("./Data/additional_materials")
 IBSdata <- read.csv("IBS_Pairs.csv", header = TRUE)
 
 IBS2 <- IBSdata[!(IBSdata$IBS > 1.0),]

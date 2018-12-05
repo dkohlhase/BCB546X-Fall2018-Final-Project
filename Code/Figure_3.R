@@ -3,7 +3,7 @@
 
 getwd()
 
-setwd("../Data/additional_materials")
+setwd("./Data/additional_materials")
  
 # Read in the data:
 nodes <- read.csv("nodes_file.csv", header=T, as.is=T)
