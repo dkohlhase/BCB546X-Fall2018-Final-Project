@@ -1,5 +1,5 @@
 # set working directory to folder where MAF data from TASSEL is stored
-setwd("./Data/TASSEL")
+setwd("../Data/TASSEL")
 
 #read in all files that fit the pattern "Chr*_MAF.csv" into a list of dataframes
 dataFiles <- lapply(Sys.glob("Chr*_MAF.csv"), read.csv)
