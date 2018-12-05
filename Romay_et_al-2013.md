@@ -32,6 +32,8 @@ The second challenge was the SNP positions. When we tried creating the graph wit
 
 The third challenge was the centromere positions. In the article the authors identify the centromeres on the graph by making those bins a different color. Nowhere in the article or in the data are references to the speficic positions of the centromeres. If we would have had access to these locations then the colors could have been changed in our script.
 
+Additionally, the chromosome labels on the x-axis appear to be added post graph production.
+
 ![](./Figures/Iowa_Captives/Fig1.png)
 
 ### Figure 2 - Identical by State Distribution Across GBS Samples
