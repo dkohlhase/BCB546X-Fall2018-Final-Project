@@ -19,3 +19,7 @@ The TASSEL folder contains data in .csv file formats that was created by analysi
 ## Code
 
 All scripts are titled by the analysis and figure from the paper they correspond to. A more detailed description of the analyses can be found in the markdown file, Romay et al - 2013.md
+
+## Figures
+
+Figures from the paper and figures from our analysis and output are located in this folder.
