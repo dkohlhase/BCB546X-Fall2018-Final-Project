@@ -19,21 +19,30 @@ This paper had five objectives:
 
 ## Replication of Analyses & Results
 ### Figure 1 - Distribution of SNPs Across the Genome
-The first figure of the paper invovles characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB. 
+The first figure of the paper involves characterizing the marker coverage by plotting the distribution of SNPs across the genome. SNPs were organized into bins that covered 1 MB. 
 
 ![](./Figures/Romay_et_al/Fig1.png)
 
-The data for this figure are located at Panzea. The first issue we ran into was loading the data file into R Studio. When we tried to load the entire file the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R was  In order to create a graph that fell on a single x-axis a new position column that was continuous across the entrire genome rather than positions that restarted for every chromosome
+The data for this figure (raw genotypic data) are located at Panzea.org. The first issue we ran into was loading the data file into R Studio. When we tried to load the entire file the process took an extensive amount of time. If we were successful in loading the file, then visualizing the dataframe in R was  In order to create a graph that fell on a single x-axis a new position column that was continuous across the entr=ire genome rather than positions that restarted for every chromosome
 
 ![](./Figures/Iowa_Captives/Fig1.png)
 
 ### Figure 2 - Identical by State Distribution Across GBS Samples
-In Figure 2 of the paper, 
+In Figure 2A of the paper, they show proportion of markers identical by state (IBS) as a distribution for all pairs of 2,815 lines. To calculate IBS, for all possible pairwise comparisons, they used the software PLINK (version 1.07). In the materials and methods section of the paper it states, "For each individual, the values for the nearest neighbors, based on how similar (IBS) they were, were summarized using the ‘–cluster –neighbour’ option in PLINK." Below is their figure:
 ![](./Figures/Romay_et_al/Fig2.png)
 
+We downloaded the PLINK software and tried to work with it, but it became apparent to us that there is a learning curve associated with the program. PLINK also requires that your files be in a certain format. While working with the program TASSEL to complete analysis for figure 5, we came across the function "relatedness-kinship" which computes an IBS data matrix from the genotypic data that is imported. So given the limited time we had to do the analyses, we chose to use TASSEL instead of PLINK. Upon reading more about the kinship function in TASSEL, we chose to use the option "Normalized_IBS". This equation calculates IBS using this equation: 
+![](./Figures/Iowa_Captives/IBS_equation.png)
 
+Our entire pipeline for this analysis included importing all raw genotypic data files (chromosomes 1 - 10) into TASSEL, using the function "Union Join" to compile these files into one, and performing the "kinship" function with the option of "Normalized_IBS" on the union joined file. The IBS matrix that was produced was then exported from TASSEL to a .csv file and imported into R to create the figure. (Unfortunately, however, the matrix .csv file is too large to upload to GitHub, so the file will need to be regenerated in TASSEL or we can find another way to provide the file.) Before creating the figure, the matrix was reformatted using the function melt() and from the R package reshape2. Then, any pairs of lines with IBS values greater than 1.0 were filtered, since the IBS matrix included IBS of lines with themselves. Next, ggplot was used to create the two histograms below. Specific comments can be found within the figure2 R code. 
+
+One distinct difference between calculating IBS in TASSEL versus PLINK is that the IBS matrix from TASSEL includes negative values. This explains why our histogram distribution appears to be quite similar to that of the paper's figure, but that our histogram is centered around 0 rather than 0.85.
 ![](./Figures/Iowa_Captives/Figure2.png)
 ![](./Figures/Iowa_Captives/Figure2_A.png)
+
+In addition to using the IBS data generated from TASSEL, we also looked at the IBS data for each line and their 10 most closely related lines which was provided in the additional material in file "Additional_File_2". Using this data instead, we created additional histograms:
+![](./Figures/Iowa_Captives/Fig2_filtered.png)
+![](./Figures/Iowa_Captives/Fig2A_filtered.png)
 
 ### Figure 3 - B73 Network Diagram
 ![](./Figures/Romay_et_al/Fig3.png)
