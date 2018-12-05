@@ -3,11 +3,11 @@
 
 getwd()
 
-setwd("C:/Users/Aleja/Documents/Final_project_copy/Figure_3_with_R/Figure_3")
+setwd("../Data/additional_materials")
  
 # Read in the data:
-nodes <- read.csv("C:/Users/Aleja/Documents/Final_project_copy/Figure_3_with_R/Figure_3/nodes.csv", header=T, as.is=T)
-links <- read.csv("C:/Users/Aleja/Documents/Final_project_copy/Figure_3_with_R/Figure_3/edges.csv", header=T, as.is=T)
+nodes <- read.csv("nodes.csv", header=T, as.is=T)
+links <- read.csv("edges.csv", header=T, as.is=T)
 
 # Examine the data:
 head(nodes)
