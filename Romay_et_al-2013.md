@@ -64,7 +64,7 @@ We replicated this analysis and were able to obtain almost the same graph using 
 
 We generated these two data frames with the information that was provided on additional file 2 (13059_2013_3103_MOESM2_ESM) that can be found in the  /Data/additional_materials folder of this repository. This file contains the distribution of the IBS relationships and the 10 closest neighbors for each unique inbred line. However, since this graph was created using the inbred line B73 and the closest related inbred lines with IBS values ≥ 97 %, we extracted these lines manually using Excel functions and then the file “IBS relationships for B73.csv” was generated and is also provided in the /Data/additional_materials folder of this repository.
 
-Once we created these two files, the data was read into Gephi where we created the figure using the different types of visualization of the software. Additionally we recreated the figure in R studio using the packages “igraph”. As we can see in our Figure, we got very similar results even when the authors do not explain the procedure that they follow, they just showed the name of the software that they used.
+Once we created these two files, the data was read into Gephi where we created the figure using the different types of visualization of the software. Additionally we recreated the figure in R studio using the packages “igraph” and some aditional documentation (Ognyanova, 2018). As we can see in our Figure, we got very similar results even when the authors do not explain the procedure that they follow, they just showed the name of the software that they used.
 
 
 ![](./Figures/Romay_et_al/Fig3.png)
