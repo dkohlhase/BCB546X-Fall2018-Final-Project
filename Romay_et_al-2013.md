@@ -70,9 +70,11 @@ Once we created these two files, the data was read into Gephi where we created t
 ![](./Figures/Romay_et_al/Fig3.png)
 
 ![](./Figures/Iowa_Captives/Fig3_with_R.png)
+
 Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using R).
 
 ![](./Figures/Iowa_Captives/Fig3_with_gephi.png)
+
 Figure 3. B73 network diagram. Network relationships of maize inbred lines with values of IBS greater than 0.97 for B73 (Recreated using Gephi-0.9.2).
 
 ### Figure 5 - Minor Allele Frequency Distribution and Percentage of SNPS Shared Between Maize Populations
