@@ -60,7 +60,7 @@ In addition to using the IBS data generated from TASSEL, we also looked at the I
 In Figure 3 of the paper, the authors represent a network diagram using the inbred line B73 as reference and the 51 closest related inbred lines with values of IBS ≥ 97 %. The network of relationships obtained using GBS data combined with pedigree information,
 provides a powerful tool to identify accessions that may have been misclassified, select best sources for multiplication/distribution, eliminate duplications, select core collections, add or recommend new experimental entries and in theory, to assess genetic profile changes over successive regenerations which could be another quality-assurance measure.
 
-We replicated this analysis and were able to obtain almost the same graph using the same software that they used (Gephi-0.9.2) which is an open source network visualization platform. Additionally we tried to reproduce the same graph using R studio installing the packages “igraph”. To do this we used the graph_from_data_frame() function, which takes two data frames: d and vertices.
+We replicated this analysis and were able to obtain almost the same graph using the same software that they used (Gephi) which is an open source network visualization platform but the version that they used was version 0.8 and we used version 0.9.2. Additionally we tried to reproduce the same graph using R studio installing the packages “igraph”. To do this we used the graph_from_data_frame() function, which takes two data frames: d and vertices.
 -	d describes the edges of the network. 
 -	vertices start with a column of node IDs. Any following columns are interpreted as node attributes like Inbred Lines and ibs values.
 
